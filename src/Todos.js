@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import "./css/styles.css";
 
 const Todos = () => {
@@ -79,12 +79,14 @@ const Todos = () => {
       </ul>
       <div style={{ marginTop: "16px", display: "flex" }}>
         <input
+          placeholder="Add your todo here.."
           style={{
             padding: "8px",
             marginRight: "8px",
             borderRadius: "4px",
-            border: "1px solid #ddd",
+            border: "1px solid gray",
             width: "70%",
+            backgroundColor: "pink",
           }}
           type="text"
           value={newTodo}
