@@ -2,7 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import "./css/styles.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faCopyright } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTrash,
+  faCopyright,
+  faHome,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
@@ -32,7 +36,11 @@ const Todos = () => {
     );
   };
 
-  const focusMe = () => {};
+  const handleKeyPress = (evt) => {
+    if (evt.key === "Enter") {
+      addTodo();
+    }
+  };
 
   return (
     <div
@@ -90,6 +98,7 @@ const Todos = () => {
       <hr></hr>
       <div style={{ marginTop: "15px", display: "flex" }}>
         <input
+          onKeyPress={handleKeyPress}
           placeholder="Add your todo here.."
           style={{
             padding: "8px",
@@ -118,11 +127,12 @@ const Todos = () => {
           Add Todos
         </button>
       </div>
-      <footer style={{ marginTop: "100px" }}>
-        <div style={{ opacity: "0.6", fontFamily: "Arial", fontSize: "15px"}}>
+      <footer style={{ marginTop: "70px" }}>
+        <div style={{ opacity: "0.6", fontFamily: "Arial", fontSize: "15px" }}>
           <FontAwesomeIcon style={{ paddingRight: "4px" }} icon={faCopyright} />
           Copyright Hussain Hamim 2024
         </div>
+        <div></div>
       </footer>
     </div>
   );
