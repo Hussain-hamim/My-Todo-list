@@ -88,7 +88,7 @@ const Todos = () => {
         ))}
       </ul>
       <hr></hr>
-      <div style={{ marginTop: "16px", display: "flex" }}>
+      <div style={{ marginTop: "15px", display: "flex" }}>
         <input
           placeholder="Add your todo here.."
           style={{
