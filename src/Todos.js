@@ -119,7 +119,7 @@ const Todos = () => {
         </button>
       </div>
       <footer style={{ marginTop: "100px" }}>
-        <div style={{ opacity: "0.6" }}>
+        <div style={{ opacity: "0.6", fontFamily: "Arial", fontSize: "15px"}}>
           <FontAwesomeIcon style={{ paddingRight: "4px" }} icon={faCopyright} />
           Copyright Hussain Hamim 2024
         </div>
