@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import "./css/styles.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+
 const Todos = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
@@ -79,7 +82,7 @@ const Todos = () => {
               }}
               onClick={() => removeTodo(todo.id)}
             >
-              Remove
+              <FontAwesomeIcon icon={faTrash} />
             </button>
           </li>
         ))}
