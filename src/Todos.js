@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./css/styles.css";
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, [todos]);
 
   const addTodo = () => {
     if (newTodo.trim() !== "") {
@@ -23,6 +28,8 @@ const Todos = () => {
       )
     );
   };
+
+  const focusMe = () => {};
 
   return (
     <div
@@ -72,11 +79,12 @@ const Todos = () => {
               }}
               onClick={() => removeTodo(todo.id)}
             >
-              X
+              Remove
             </button>
           </li>
         ))}
       </ul>
+      <hr></hr>
       <div style={{ marginTop: "16px", display: "flex" }}>
         <input
           placeholder="Add your todo here.."
@@ -91,6 +99,7 @@ const Todos = () => {
           type="text"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
+          ref={inputRef}
         />
         <button
           style={{
