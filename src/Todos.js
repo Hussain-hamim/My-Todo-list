@@ -1,13 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./css/styles.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTrash,
-  faCopyright,
-  faHome,
-} from "@fortawesome/free-solid-svg-icons";
-
 const Todos = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
@@ -42,60 +35,24 @@ const Todos = () => {
     }
   };
 
+  const clearAllCompleted = () => {
+    setTodos(todos.filter((todo) => !todo.completed));
+  };
+
   return (
     <div
       style={{
         maxWidth: "400px",
         margin: "auto",
         fontFamily: "Arial, sans-serif",
+        backgroundColor: "antiquewhite",
+        padding: "20px",
+        borderRadius: "7px",
+        boxShadow: "3px 3px 3px dimgray",
       }}
     >
       <h2 style={{ textAlign: "center", color: "#333" }}>My ToDo list</h2>
-      <ul style={{ listStyleType: "none", padding: "0" }}>
-        {todos.map((todo) => (
-          <li
-            style={{
-              display: "flex",
-              alignItems: "center",
-              margin: "8px 0",
-              padding: "8px",
-              border: "1px solid #ddd",
-              borderRadius: "4px",
-              background: "#fff",
-            }}
-            key={todo.id}
-          >
-            <input
-              type="checkbox"
-              style={{ marginRight: "8px" }}
-              checked={todo.completed}
-              onChange={() => toggleCompletion(todo.id)}
-            />
-            <span
-              style={{
-                textDecoration: todo.completed ? "line-through" : "none",
-                opacity: todo.completed ? "0.7" : "1",
-              }}
-            >
-              {todo.text}
-            </span>
-            <button
-              style={{
-                marginLeft: "auto",
-                padding: "4px 8px",
-                background: "#dc3545",
-                color: "#fff",
-                border: "none",
-                borderRadius: "4px",
-              }}
-              onClick={() => removeTodo(todo.id)}
-            >
-              <FontAwesomeIcon icon={faTrash} />
-            </button>
-          </li>
-        ))}
-      </ul>
-      <hr></hr>
+
       <div style={{ marginTop: "15px", display: "flex" }}>
         <input
           onKeyPress={handleKeyPress}
@@ -127,10 +84,70 @@ const Todos = () => {
           Add Todos
         </button>
       </div>
+
+      <ul style={{ listStyleType: "none", padding: "0" }}>
+        {todos.map((todo) => (
+          <li
+            style={{
+              display: "flex",
+              alignItems: "center",
+              margin: "8px 0",
+              padding: "8px",
+              borderBottom: "2px solid #ddd",
+              borderRadius: "4px",
+              backgroundColor: "#fff8dcce",
+            }}
+            key={todo.id}
+          >
+            <input
+              type="checkbox"
+              style={{ marginRight: "8px" }}
+              checked={todo.completed}
+              onChange={() => toggleCompletion(todo.id)}
+            />
+            <span
+              style={{
+                textDecoration: todo.completed ? "line-through" : "none",
+                opacity: todo.completed ? "0.7" : "1",
+              }}
+            >
+              {todo.text}
+            </span>
+            <button
+              style={{
+                marginLeft: "auto",
+                padding: "4px 8px",
+                background: "#ff593cef",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+              }}
+              onClick={() => removeTodo(todo.id)}
+            >
+              X
+            </button>
+          </li>
+        ))}
+      </ul>
+      <hr></hr>
+
+      <button
+        style={{
+          backgroundColor: "#4688be9a",
+          border: "none",
+          padding: "5px",
+          borderRadius: "3px",
+          cursor: "pointer",
+          marginLeft: "30%",
+        }}
+        onClick={clearAllCompleted}
+      >
+        Clear All Completed
+      </button>
+
       <footer style={{ marginTop: "70px" }}>
         <div style={{ opacity: "0.6", fontFamily: "Arial", fontSize: "15px" }}>
-          <FontAwesomeIcon style={{ paddingRight: "4px" }} icon={faCopyright} />
-          Copyright Hussain Hamim 2024
+          @Copyright Hussain Hamim 2024
         </div>
         <div></div>
       </footer>
