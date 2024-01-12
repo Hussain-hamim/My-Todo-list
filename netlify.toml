@@ -1,2 +1,2 @@
 [build]
-  base = "your/base/directory"
+  base = "src"
