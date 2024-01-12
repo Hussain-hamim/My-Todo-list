@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./css/styles.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faCopyright } from "@fortawesome/free-solid-svg-icons";
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
@@ -118,6 +118,12 @@ const Todos = () => {
           Add Todos
         </button>
       </div>
+      <footer style={{ marginTop: "100px" }}>
+        <div style={{ opacity: "0.6" }}>
+          <FontAwesomeIcon style={{ paddingRight: "4px" }} icon={faCopyright} />
+          Copyright Hussain Hamim 2024
+        </div>
+      </footer>
     </div>
   );
 };
