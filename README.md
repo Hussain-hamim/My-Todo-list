@@ -1,8 +1,7 @@
 # My Todo list app
 
--**Click for viewing the** [live Demo](https://my-todo-list-hussain-hamim.vercel.app/).
+-**Click for viewing the** [Live Demo](https://my-todo-list-hussain-hamim.vercel.app/).
 
-# Todo List Web Application
 
 ## Introduction
 This is a simple React-based web application for managing a to-do list. The application allows users to add, remove, and mark tasks as completed. It provides a clean and intuitive interface to help users organize their tasks efficiently.
@@ -22,7 +21,7 @@ This is a simple React-based web application for managing a to-do list. The appl
 - **React:** The application is built using the React JavaScript library, providing a modular and efficient structure.
 
 ### Author
-- **Author:** Hussain Hamim
+- **Author:** [Hussain Hamim](https://github.com/Hussain-hamim)
 - **Copyright:** © 2024 Hussain Hamim
 
 ### Styling
