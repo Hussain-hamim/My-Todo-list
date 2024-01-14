@@ -45,6 +45,10 @@ This is a simple React-based web application for managing a to-do list. The appl
 
 Feel free to explore, contribute, and enhance this to-do list application!
 
+## License
+
+This project is licensed under the [MIT](#) License.
+
 
 
 
