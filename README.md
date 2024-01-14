@@ -24,10 +24,6 @@ This is a simple React-based web application for managing a to-do list. The appl
 - **Author:** [Hussain Hamim](https://github.com/Hussain-hamim)
 - **Copyright:** © 2024 Hussain Hamim
 
-### Styling
-- The application features a responsive design with a maximum width of 400px, centered on the page.
-- The interface is styled using inline CSS for simplicity.
-
 ### User Interaction
 - The input field is focused automatically when the list is updated, providing a seamless user experience.
 
