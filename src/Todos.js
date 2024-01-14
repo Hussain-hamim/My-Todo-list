@@ -81,7 +81,7 @@ const Todos = () => {
           }}
           onClick={addTodo}
         >
-          Add Todos
+          Add Todo
         </button>
       </div>
 
@@ -147,7 +147,7 @@ const Todos = () => {
 
       <footer style={{ marginTop: "70px" }}>
         <div style={{ opacity: "0.6", fontFamily: "Arial", fontSize: "15px" }}>
-          @Copyright Hussain Hamim 2024
+          ©Copyright 2024 Hussain Hamim
         </div>
         <div></div>
       </footer>
