@@ -12,7 +12,21 @@ const Todos = () => {
 
   const addTodo = () => {
     if (newTodo.trim() !== "") {
-      setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
+      setTodos([
+        {
+          id: Date.now(),
+          text: newTodo,
+          completed: false,
+          dateTime: new Date().toLocaleDateString(undefined, {
+            minute: "numeric",
+            hour: "numeric",
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          }),
+        },
+        ...todos,
+      ]);
       setNewTodo(" ");
     }
   };
@@ -73,7 +87,7 @@ const Todos = () => {
         <button
           style={{
             padding: "8px 16px",
-            background: "#28a745",
+            background: "#4688be9a",
             color: "fff",
             border: "none",
             borderRadius: "4px",
@@ -81,7 +95,7 @@ const Todos = () => {
           }}
           onClick={addTodo}
         >
-          Add Todos
+          Add Todo
         </button>
       </div>
 
@@ -105,13 +119,19 @@ const Todos = () => {
               checked={todo.completed}
               onChange={() => toggleCompletion(todo.id)}
             />
-            <span
-              style={{
-                textDecoration: todo.completed ? "line-through" : "none",
-                opacity: todo.completed ? "0.7" : "1",
-              }}
-            >
-              {todo.text}
+            <span>
+              <span
+                style={{
+                  overflow: "clip",
+                  textDecoration: todo.completed ? "line-through" : "none",
+                  opacity: todo.completed ? "0.7" : "1",
+                }}
+              >
+                {todo.text}
+              </span>
+              <p style={{ opacity: "0.5", fontSize: "10px" }}>
+                {todo.dateTime}
+              </p>
             </span>
             <button
               style={{
