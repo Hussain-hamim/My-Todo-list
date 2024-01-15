@@ -119,10 +119,9 @@ const Todos = () => {
               checked={todo.completed}
               onChange={() => toggleCompletion(todo.id)}
             />
-            <span>
+            <span style={{ overflow: "clip" }}>
               <span
                 style={{
-                  overflow: "clip",
                   textDecoration: todo.completed ? "line-through" : "none",
                   opacity: todo.completed ? "0.7" : "1",
                 }}
