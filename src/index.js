@@ -1,7 +1,12 @@
-import { useMemo, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-import Todos from "./Todos";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Todos />);
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);

@@ -1,47 +1,21 @@
-body {
-  background-color: #edefee;
-  font-family: "Markazi Text", serif;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  margin-left: 5%;
-  margin-right: 5%;
-  background-color: rgb(160, 90, 90);
-}
-
-h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-header > img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-nav ul {
-  list-style: none;
-  text-align: center;
-}
-
-nav li {
-  display: inline-block;
-}
-
-section {
+.background {
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eee;
 }
 
-article {
-  flex: 1;
+.background--active {
+  background: #a6b5ff;
 }
 
-footer {
-  display: flex;
+.picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
 }
-footer div {
-  flex: 1;
+.picture--active {
+  border: 5px solid #a6b5ff;
 }
