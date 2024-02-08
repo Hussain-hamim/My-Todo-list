@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
-import Todo from "./Todo";
+import Todos from "./Todos.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Todo />
+    <Todos />
   </BrowserRouter>
 );
